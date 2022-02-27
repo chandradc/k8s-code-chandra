@@ -1,0 +1,29 @@
+kubectl create -f first-app-pod-definition.yml
+
+kubectl port-forward <pod> 8888:8080
+
+kubectl expose pod <pod> --type=NodePort --name mysvc
+
+minikube service mysvc --url
+
+kubectl describe pod <pod>
+
+Addional commands:
+to execute commands
+
+kubectl exec myapp -- date
+kubectl exec myapp -- ls /
+
+kubectl describe service mysvc
+
+Use the end point to connect from other pods
+lets create a busy box container and test it
+
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+ls
+telnet endpoint IP port
+GET /
+
+#make sure you are able to access the other pod
+
+To expose the pod to internet, create a service yml type as LoadBalancer. Run on AWS cluster

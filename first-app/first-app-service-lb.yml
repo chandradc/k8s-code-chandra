@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+  spec:
+  selector:
+    app: first-app
+  ports:
+  - port: 8080
+    targetPort: tomcatport
+    protocal: TCP
+  type: LoadBalancer

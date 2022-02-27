@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: first-app
+spec:
+  containers:
+  - name: myfirstapp
+    image: chandradc/06mytomcat
+    ports:
+      - name: tomcatport
+      - containerPort: 8080
