@@ -4,10 +4,11 @@ metadata:
   name: myapp
   labels:
     name: first-app
+    app: myfirst-app
 spec:
   containers:
   - name: myfirstapp
     image: chandradc/06mytomcat
     ports:
       - name: tomcatport
-      - containerPort: 8080
+        containerPort: 8080
