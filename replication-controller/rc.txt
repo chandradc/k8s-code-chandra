@@ -1,0 +1,17 @@
+kubectl create -f replication-controller.yml
+
+kubectl get pods
+
+kubectl delete pod <pod name>
+
+The pod delete will automatically create another pod to maintain the number of replications
+
+you can sacle the running pods using 2 ways
+
+kubectl scale --replicas=4 -f replication-controller.yml
+
+kubectl get rc (or replictioncontroller)
+
+kubectl scale --replicas=1 rc <rcname>
+
+kubectl delete rc <rcname>

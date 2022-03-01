@@ -1,0 +1,20 @@
+kubectl get nodes
+
+kubectl get nodes --show-labels
+
+run the deployment yaml file without adding the labels to the nodes
+
+kubectl get deployment <dep name>
+
+kubectl get pods -- all should be in Pending state
+
+kubectl describe pod <one of the pod>
+
+Warning  FailedScheduling  22s (x3 over 110s)  default-scheduler  0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector.
+
+label the nodes
+kubectl label nodes minikube env=dev
+
+kubectl get nodes --show-labels (to confirm the label has been added)
+
+kubectl get pods (make sure all the pods are in running state - we may need to wait for some time)
