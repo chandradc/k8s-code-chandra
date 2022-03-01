@@ -1,0 +1,5 @@
+kubectl create -f pod-lifecycle.yml
+
+check the differenet lifecycle of of the pods
+
+kubectl exec  lifecycle-7678bf59bd-lm6xr cat /timing

@@ -1,0 +1,9 @@
+kubectl create -f lieness-readiness-probe.yml
+
+kubectl get pods
+
+you can see the status is running but it will take a while to become ready.
+
+change readiness probe path and check what happens
+
+kubectl describe pod <pod name>

@@ -1,0 +1,8 @@
+
+kubectl create -f deployment-with-healthcheck,.ym
+
+kubectl get deployment
+
+kubectl describe deployment myapp-deployment
+
+Check for the liveness key
