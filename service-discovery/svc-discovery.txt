@@ -1,0 +1,42 @@
+
+
+kubectl create -f secrets.yml
+
+kubectl create -f database.yml
+
+kubectl create -f database-service.yml
+
+kubectl create -f helloworld-db.yml
+
+kubectl create -f helloworld-db.service.yml
+
+kubectl get pods
+
+kubectl get service
+
+minikube service helloworld-db-service --url
+
+kubectl logs <podname> - check if its connected to DB
+
+check the url in the browser to see if the visitor number increases.
+
+The data is written to mysql db to check theDB
+
+kubectl exec database -i -t -- mysql -u root -p (passwd: rootpassword)
+
+show databases;
+
+use helloworld;
+
+show tables;
+
+select * from visits;
+
+to prove that this works thru service discovery, we will need to do a nslookup.
+
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+
+nslookup database-service
+
+telnet helloworld-db-service 3000
+GET /
