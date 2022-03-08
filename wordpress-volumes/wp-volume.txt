@@ -1,0 +1,27 @@
+create efs volume
+
+aws efs create-file-system --creation-token 1
+
+create efs mount target
+
+aws efs create-mount-target --file-system-id fs-013675a8b610a9a0b --subnet-id subnet-0d9b92e179af78a5a --security-groups sg-02e3e1342b2d35269
+
+replace the file system id in the wordpreess-web.yml
+
+kubectl create -f  storage.yml
+
+kubectl create -f pv-claim.yml
+
+kubectl create -f wordpress-secrets.yml
+
+kubectl create -f wordpress-db.yml
+
+kubectl create -f wordpress-db-service.yml
+
+kubectl get pv
+
+kubectl creaate -f wordpress-web.yml
+
+kubectl creaate -f wordpress-web-service.yml
+
+EFS creation would take some time

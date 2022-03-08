@@ -1,0 +1,21 @@
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+
+enable ingress addon
+
+minikube addons enable ingress
+
+kubectl get pods --all-namespaces -l app=ingress-nginx
+
+kubectl apply -f apple.yml
+
+kubectl apply -f banana.yml
+
+kubectl apply -f ingress.yml
+
+minikube tunnel
+
+kubectl get svc
+
+minikube service apple-service --url
+
+check the ip/apple & ip/banana in browser

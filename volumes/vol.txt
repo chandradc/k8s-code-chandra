@@ -1,0 +1,35 @@
+Attach the Administratorpolicy to the roles attached to Master and nodes in EC2 without fail
+
+# create vol in AWS
+
+aws ec2 create-volume --size 10 --region us-east-1 --availability-zone us-east-1a --volume-type gp2
+
+replace vol id in the yml file
+
+kubectl create -f helloworld-with-volume.yml
+
+kubectl get pods
+
+kubectl describe pod
+
+check if the volume has been attached
+
+login to pod
+
+kubectl exec <pod name> -i -i -- bash
+
+craate a file vol.txt in /myvol
+
+create a file test.txt in /
+
+drain the current node where the pod is attached.
+
+kubectl get pod -o wide
+
+kubectl drain <nodename> --ignore-daemonsets --force
+
+once done new pod will be created and volume attached to the other node and check for the files already mounted
+
+to delete the volume, first delete the deployment and once the pod is deleted you can delete the volume
+
+aws ec2 delete-volume --volume-id vol-0bb76e50ecdf97e4c
