@@ -16,6 +16,8 @@ kubectl create -f wordpress-secrets.yml
 
 kubectl create -f wordpress-db.yml
 
+wait for the pod to be in running state
+
 kubectl create -f wordpress-db-service.yml
 
 kubectl get pv
@@ -25,3 +27,12 @@ kubectl creaate -f wordpress-web.yml
 kubectl creaate -f wordpress-web-service.yml
 
 EFS creation would take some time
+
+hit the LB in browser
+
+and try to upload media or jpg in the WP blog.
+
+once everything is fine delete all the pods. Once they are re-created yu should be able to see the images in the blog as the volume is persistent
+
+Cleanup:
+Make sure to remove the EFS from the console
