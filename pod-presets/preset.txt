@@ -1,0 +1,35 @@
+Create a 2 node kops cluster
+
+kops edit cluster <clustername>
+
+add the below at the end.
+
+spec:
+  kubeAPIServer:
+    appendAdmissionPlugins:
+    - PodPreset
+    runtimeConfig:
+      settings.k8s.io/v1alpha1: "true"
+
+then create the cluster
+
+kops update cluster dev.k8s.chandradc.in --yes
+
+validate the cluter and once ready
+
+kubectl get nodes
+
+kops validate cluster
+
+First apply the PodPresets:
+```
+kubectl create -f pod-presets.yaml
+```
+
+Then run the deployments
+```
+kubectl create -f deployments.yaml
+
+check if the environment is injected into all the pods
+
+kubectl describe pod <pod name>
