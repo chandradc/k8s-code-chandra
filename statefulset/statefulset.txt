@@ -1,3 +1,8 @@
+make sure all clusters are in us-east-1a & instance type t2.small
+
+kops create cluster --cloud=aws --zones=us-east-1a --name=dev.k8s.chandradc.in --dns-zone=chandradc.in --dns private --node-count=2 --master-size=t2.small --node-size=t2.small --master-image=ami-087c17d1fe0178315 --node-image=ami-087c17d1fe0178315
+
+
 
 kubectl create -f cassandra.yml
 
