@@ -1,0 +1,7 @@
+kubectl create -f .
+
+kubectl run hello-kubernetes --image=k8s.gcr.io/echoserver:1.4 --port=8080
+
+kubectl top node
+
+kubectl top pod
