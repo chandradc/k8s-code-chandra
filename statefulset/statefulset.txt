@@ -1,0 +1,31 @@
+
+kubectl create -f cassandra.yml
+
+kubectl get pod
+
+note that the pod name is cassandra0
+
+kubectl get pv
+
+kubectl get pvc
+
+watch kubectl get pod
+
+
+kubectl get pod
+
+kubectl exec -it cassandra-0 -- nodetool status
+
+kubectl exec -it cassandra-0 -- bash
+
+login to the pod
+
+ping cassandra-0.cassandra
+
+ping cassandra-1.cassandra
+
+ping cassandra-2.cassandra
+
+kubectl delete pod cassandra-2
+
+kubectl get pods (check the same pod will be created)
