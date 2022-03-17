@@ -1,3 +1,14 @@
+Try in Minikube
+
+## kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+kubectl create -f components.yamls
+
+minikube dashboard --url
+
+check if you are able to see the metrics in dashboard for the node and pod
+
+
 kubectl create -f .
 
 kubectl run hello-kubernetes --image=k8s.gcr.io/echoserver:1.4 --port=8080

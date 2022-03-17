@@ -1,0 +1,34 @@
+
+kubectl create -f hpa-example.yml
+
+kubectl get pod
+
+kubectl get hpa
+
+check for CPU% and MIN and MAX PODS
+
+run busy box and access the app to increase the CPU% and test the autoscaling
+
+kubectl run -i --tty --image=busybox /bin/sh
+
+wget http://hpa-example.default.svc.cluster.local:31001
+
+cat index.html
+rm index.html
+
+
+while true; do wget -q -O-  http://hpa-example.default.svc.cluster.local:31001; done
+
+in another window check
+
+kubectl get hpa
+
+check the CPU% has increased and check for pods it should have autoscaled to 10
+
+kubectl get pod
+
+Now stop the loop in another window and wait for few min to see if the CPU% went down
+
+kubectl get hpa
+
+kubectl get pod (it may take some time to bring down the pods)
