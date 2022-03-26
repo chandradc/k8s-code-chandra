@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: rc-demo
-          image: chandradc/06mytomcat
+          image: nginx
           ports:
           - name: tomcatport
-            containerPort: 8080
+            containerPort: 80
