@@ -1,5 +1,4 @@
 
-
 kubectl create -f secrets.yml
 
 kubectl create -f database.yml
@@ -22,7 +21,9 @@ check the url in the browser to see if the visitor number increases.
 
 The data is written to mysql db to check theDB
 
-kubectl exec database -i -t -- mysql -u root -p (passwd: rootpassword)
+kubectl exec database -i -t -- mysql -u root -p
+
+when prompted for password s(passwd: rootpassword)
 
 show databases;
 
